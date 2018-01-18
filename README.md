@@ -43,3 +43,8 @@ We have used the form_alter hook to change label.
 ```
 To acheive this we have to add new controller to the module. URL will be like http://localhost/page_json/{FOOBAR12345}/17 where data in {} is Site Api Key.
 ```
+
+### Reference Taken From
+* [Drupal 8: Extending Core Configuration, Extending Core Forms, and Overriding Core Routes] (http://www.jaypan.com/tutorial/drupal-8-extending-core-configuration-extending-core-forms-and-overriding-core-routes)
+* [Naming and placing your Drupal 8 module] (https://www.drupal.org/docs/8/creating-custom-modules/naming-and-placing-your-drupal-8-module)
+* [Coding standards] (https://www.drupal.org/node/318)
