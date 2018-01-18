@@ -1,41 +1,40 @@
 <?php
 
 /**
- * Implements hook_form_alter().
+ * @file
+ * This file is use to alter the site setting form.
  */
 
-function extend_site_setting_form_system_site_information_settings_alter(&$form, $form_state, $form_id)
-{
+/**
+ * Implements hook_form_alter().
+ */
+function extend_site_setting_form_system_site_information_settings_alter(&$form, $form_state, $form_id) {
 
-    // Extended "Basic site settings" form with Site API Key field under "SITE DETAILS" 
-    $site_api_key = \Drupal::config('siteapikey.configuration')->get('siteapikey');
-    $form['site_information']['site_api_key'] = array(
-        '#type' => 'textfield',
-        '#title' => t('Site API Key'),
-        '#default_value' => $site_api_key,
-        '#description' => t('Add you site API key here.'),
-    );
+  // Extended "Basic site settings" form with Site API Key.
+  $site_api_key = \Drupal::config('siteapikey.configuration')->get('siteapikey');
+  $form['site_information']['site_api_key'] = [
+    '#type' => 'textfield',
+    '#title' => t('Site API Key'),
+    '#default_value' => $site_api_key,
+    '#description' => t('Add you site API key here.'),
+  ];
 
-    // Changed the form submit button label to "Update Configuration"
-    $form['actions']['submit']['#value'] = t('Update Configuration');
+  // Changed the form submit button label to "Update Configuration".
+  $form['actions']['submit']['#value'] = t('Update Configuration');
 
-    // Custom form submit handler
-    $form['#submit'][] = 'extend_site_setting_handler';
+  // Custom form submit handler.
+  $form['#submit'][] = 'extend_site_setting_handler';
 }
 
 /**
-* Added handler to submit the new value to the database and storing that into configuration variable
-*/
-function extend_site_setting_handler($form, &$form_state)
-{
-    // Now we need to save the new 'site_api_key' to the configuration
-    $config_arialbe = \Drupal::configFactory()->getEditable('siteapikey.configuration');
-    $site_api_key_value = $form_state->getValue(['site_api_key']);
-    $config_arialbe->set('siteapikey', $site_api_key_value);
-    $config_arialbe->save();
-
-
-    // Add message that Site API Key has been set
-	drupal_set_message(t('"@site_apikey" ,Your setting is being submitted with site api key!', array('@site_apikey' => $site_api_key_value)));
-   
+ * Added handler to submit new field, also stored in config variable.
+ */
+function extend_site_setting_handler($form, &$form_state) {
+  // Now we need to save the new 'site_api_key' to the configuration.
+  $config_variable = \Drupal::configFactory()->getEditable('siteapikey.configuration');
+  $site_api_key_value = $form_state->getValue(['site_api_key']);
+  $config_variable->set('siteapikey', $site_api_key_value);
+  $config_variable->save();
+  // Add message that Site API Key has been set.
+  drupal_set_message(t('"@site_apikey" ,Your setting is being submitted with site api key!', ['@site_apikey' => $site_api_key_value]));
 }
