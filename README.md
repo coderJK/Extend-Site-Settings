@@ -3,7 +3,7 @@ Custom module to add the new field in Basic site setting and use that field valu
 
 ## Getting Started
 
-* Download the module, then place this module in drupal folder structure i.e. sites/all/modules/
+* Download the module and rename the folder to "extend_site_setting", then place this module in drupal folder structure i.e. sites/all/modules/
 * Now enable this module from site administrator account.
 
 
