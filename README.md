@@ -1,4 +1,4 @@
-# SiteApiKey
+# Extend Site Settings
 Custom module to add the new field in Basic site setting and use that field value in URL to represent JSON output for node.
 
 ## Getting Started
