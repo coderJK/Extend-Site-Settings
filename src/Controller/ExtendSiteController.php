@@ -10,20 +10,16 @@
  * node id (nid) of an appropriate node are present, otherwise it will respond with "access denied".
  * Example URL: http://localhost/page_json/FOOBAR12345/17
  *
- * PHP version 5.*
- * LICENSE: This source file is subject to version 3.01 of the PHP license
- * that is available through the world-wide-web at the following URI:
- * http://www.php.net/license/3_01.txt.  If you did not receive a copy of
- * the PHP License and are unable to obtain it through the web, please
- * send a note to license@php.net so we can mail you a copy immediately.
+ * PHP version 5.6
+ * LICENSE: Added this for practical exam
  *
  * @category   SiteConfiguration
  * @package    SiteConfiguration
  * @author     "Jitesh Khatwani <jiteshkhatwani@gmail.com>"
  * @copyright  2018-2019 Personal
- * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @license    https://github.com/coderJK/Extend-Site-Settings Personal use
  * @version    Github
- * @link       https://www.linkedin.com/in/jitesh-khatwani-6148a11b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BJDOjwW1%2BQEmanDbDVg%2FtOA%3D%3D
+ * @link       https://github.com/coderJK/Extend-Site-Settings
  * @see        NetOther, Net_Sample::Net_Sample()
  * @since      File available since Release 1.0
  * @deprecated File deprecated in Release 1.1
@@ -40,8 +36,8 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  * @category Class
  * @package  SiteConfiguration
  * @author   Jitesh Khatwani 
- * @license  http://www.php.net/license/3_01.txt  PHP License 3.01
- * @link     https://www.linkedin.com/in/jitesh-khatwani-6148a11b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BJDOjwW1%2BQEmanDbDVg%2FtOA%3D%3D
+ * @license  https://github.com/coderJK/Extend-Site-Settings Personal use
+ * @link     https://github.com/coderJK/Extend-Site-Settings
  *
  */
 class ExtendSiteController
