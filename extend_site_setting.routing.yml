@@ -1,0 +1,12 @@
+extend_site_setting.content:
+  path: '/page_json/{site_api_key}/{node}'
+  defaults:
+    _controller: '\Drupal\extend_site_setting\Controller\ExtendSiteController::content'
+  options:
+      parameters:
+        site_api_key:
+          type: String
+        node:
+          type: entity:node
+  requirements:
+    _permission: 'access content'

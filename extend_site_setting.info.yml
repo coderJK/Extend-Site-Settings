@@ -1,0 +1,6 @@
+name: Extend Site Settings
+description: Extended basic site setting form Site Api key.
+package: Custom
+
+type: module
+core: 8.x
